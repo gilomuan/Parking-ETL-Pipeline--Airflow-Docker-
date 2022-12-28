@@ -1,0 +1,46 @@
+[2022-12-23T22:30:24.650+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-23T22:14:11.786116+00:00 [queued]>
+[2022-12-23T22:30:24.693+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-23T22:14:11.786116+00:00 [queued]>
+[2022-12-23T22:30:24.706+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-23T22:30:24.709+0000] {taskinstance.py:1284} INFO - Starting attempt 2 of 2
+[2022-12-23T22:30:24.710+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-23T22:30:24.783+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): transform_data> on 2022-12-23 22:14:11.786116+00:00
+[2022-12-23T22:30:24.807+0000] {standard_task_runner.py:55} INFO - Started process 190 to run task
+[2022-12-23T22:30:24.862+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'parking_pipeline', 'transform_data', 'scheduled__2022-12-23T22:14:11.786116+00:00', '--job-id', '103', '--raw', '--subdir', 'DAGS_FOLDER/parking_dag.py', '--cfg-path', '/tmp/tmp1rmzidwu']
+[2022-12-23T22:30:24.866+0000] {standard_task_runner.py:83} INFO - Job 103: Subtask transform_data
+[2022-12-23T22:30:26.149+0000] {task_command.py:389} INFO - Running <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-23T22:14:11.786116+00:00 [running]> on host 1437489fb73b
+[2022-12-23T22:30:26.397+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=parking_pipeline
+AIRFLOW_CTX_TASK_ID=transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-23T22:14:11.786116+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-23T22:14:11.786116+00:00
+[2022-12-23T22:30:26.449+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/parking_dag.py", line 28, in process_parking_data
+    df = pd.read_json(data)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 207, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/json/_json.py", line 607, in read_json
+    encoding_errors=encoding_errors,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/json/_json.py", line 675, in __init__
+    data = self._get_data_from_filepath(filepath_or_buffer)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/json/_json.py", line 718, in _get_data_from_filepath
+    errors=self.encoding_errors,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 614, in get_handle
+    storage_options=storage_options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 396, in _get_filepath_or_buffer
+    raise ValueError(msg)
+ValueError: Invalid file path or buffer object type: <class 'list'>
+[2022-12-23T22:30:26.480+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=parking_pipeline, task_id=transform_data, execution_date=20221223T221411, start_date=20221223T223024, end_date=20221223T223026
+[2022-12-23T22:30:26.510+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 103 for task transform_data (Invalid file path or buffer object type: <class 'list'>; 190)
+[2022-12-23T22:30:26.653+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2022-12-23T22:30:26.696+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

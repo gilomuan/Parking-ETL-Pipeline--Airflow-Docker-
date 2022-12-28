@@ -1,0 +1,42 @@
+[2022-12-26 19:34:46,814] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-26T19:32:42.409435+00:00 [queued]>
+[2022-12-26 19:34:46,820] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-26T19:32:42.409435+00:00 [queued]>
+[2022-12-26 19:34:46,821] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-26 19:34:46,821] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-12-26 19:34:46,822] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-26 19:34:46,830] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): transform_data> on 2022-12-26 19:32:42.409435+00:00
+[2022-12-26 19:34:46,835] {standard_task_runner.py:52} INFO - Started process 9218 to run task
+[2022-12-26 19:34:46,839] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'parking_pipeline', 'transform_data', 'scheduled__2022-12-26T19:32:42.409435+00:00', '--job-id', '366', '--raw', '--subdir', 'DAGS_FOLDER/parking_dag.py', '--cfg-path', '/tmp/tmp_445p0nb', '--error-file', '/tmp/tmpj43ag3x8']
+[2022-12-26 19:34:46,841] {standard_task_runner.py:80} INFO - Job 366: Subtask transform_data
+[2022-12-26 19:34:46,895] {task_command.py:369} INFO - Running <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-26T19:32:42.409435+00:00 [running]> on host a4f1a67a8720
+[2022-12-26 19:34:46,955] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=parking_pipeline
+AIRFLOW_CTX_TASK_ID=transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-26T19:32:42.409435+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-26T19:32:42.409435+00:00
+[2022-12-26 19:34:46,976] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/parking_dag.py", line 36, in _transform_parking_data
+    'handicapInd', 'timeRestrictionDsc', 'maxHoursCnt','meterTypeDsc', 'zoneSpaceCnt'])
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 4913, in drop
+    errors=errors,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/generic.py", line 4150, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/generic.py", line 4185, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 6017, in drop
+    raise KeyError(f"{labels[mask]} not found in axis")
+KeyError: "['statePlaneYCrdhandicapInd'] not found in axis"
+[2022-12-26 19:34:46,992] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=parking_pipeline, task_id=transform_data, execution_date=20221226T193242, start_date=20221226T193446, end_date=20221226T193446
+[2022-12-26 19:34:47,000] {standard_task_runner.py:97} ERROR - Failed to execute job 366 for task transform_data ("['statePlaneYCrdhandicapInd'] not found in axis"; 9218)
+[2022-12-26 19:34:47,052] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-12-26 19:34:47,082] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

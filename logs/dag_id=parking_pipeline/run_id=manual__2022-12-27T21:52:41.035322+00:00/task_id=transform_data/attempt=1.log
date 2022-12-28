@@ -1,0 +1,133 @@
+[2022-12-27 21:52:46,134] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data manual__2022-12-27T21:52:41.035322+00:00 [queued]>
+[2022-12-27 21:52:46,140] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data manual__2022-12-27T21:52:41.035322+00:00 [queued]>
+[2022-12-27 21:52:46,141] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-27 21:52:46,142] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-12-27 21:52:46,142] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-27 21:52:46,151] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): transform_data> on 2022-12-27 21:52:41.035322+00:00
+[2022-12-27 21:52:46,156] {standard_task_runner.py:52} INFO - Started process 10663 to run task
+[2022-12-27 21:52:46,160] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'parking_pipeline', 'transform_data', 'manual__2022-12-27T21:52:41.035322+00:00', '--job-id', '596', '--raw', '--subdir', 'DAGS_FOLDER/parking_dag.py', '--cfg-path', '/tmp/tmp9l5itb7j', '--error-file', '/tmp/tmpb3jvn4w5']
+[2022-12-27 21:52:46,162] {standard_task_runner.py:80} INFO - Job 596: Subtask transform_data
+[2022-12-27 21:52:46,214] {task_command.py:369} INFO - Running <TaskInstance: parking_pipeline.transform_data manual__2022-12-27T21:52:41.035322+00:00 [running]> on host 8fbeee8d3d5a
+[2022-12-27 21:52:46,275] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=parking_pipeline
+AIRFLOW_CTX_TASK_ID=transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-27T21:52:41.035322+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-12-27T21:52:41.035322+00:00
+[2022-12-27 21:52:46,295] {logging_mixin.py:115} INFO - before drop:
+[2022-12-27 21:52:46,318] {logging_mixin.py:115} INFO -                       transactionSourceCode  ...      metroAreaName
+parkingTransactionKey                        ...                   
+3                                       IPS  ...    Virginia Square
+18                                      IPS  ...            Rosslyn
+28                                      IPS  ...         Courthouse
+49                                      IPS  ...            Rosslyn
+61                                      IPS  ...            Rosslyn
+7                                       IPS  ...          Clarendon
+12                                      IPS  ...        Shirlington
+37                                      IPS  ...         Courthouse
+46                                      IPS  ...         Courthouse
+55                                      IPS  ...         Courthouse
+81                                      IPS  ...         Courthouse
+95                                      IPS  ...          Clarendon
+124                                     IPS  ...  Virginia Hospital
+137                                     IPS  ...         Courthouse
+153                                     IPS  ...           Ballston
+161                                     IPS  ...      Pentagon City
+178                                     IPS  ...       Crystal City
+191                                     IPS  ...      Columbia Pike
+206                                     IPS  ...         Courthouse
+60                                      IPS  ...         Courthouse
+73                                      IPS  ...         Courthouse
+91                                      IPS  ...          Clarendon
+112                                     IPS  ...            Rosslyn
+130                                     IPS  ...  Virginia Hospital
+228                                     IPS  ...        Shirlington
+240                                     IPS  ...        Shirlington
+249                                     IPS  ...       Crystal City
+271                                     IPS  ...       Crystal City
+132                                     IPS  ...  Virginia Hospital
+141                                     IPS  ...         Courthouse
+170                                     IPS  ...         Courthouse
+195                                     IPS  ...               None
+225                                     IPS  ...          Clarendon
+230                                     IPS  ...       Crystal City
+259                                     IPS  ...       CRYSTAL CITY
+266                                     IPS  ...         Courthouse
+281                                     IPS  ...      Columbia Pike
+291                                     IPS  ...      Pentagon City
+295                                     IPS  ...       Crystal City
+310                                     IPS  ...      Pentagon City
+317                                     IPS  ...      Columbia Pike
+329                                     IPS  ...          Clarendon
+353                                     IPS  ...           Ballston
+362                                     IPS  ...       Crystal City
+373                                     IPS  ...          Clarendon
+382                                     IPS  ...         Courthouse
+389                                     IPS  ...           Ballston
+407                                     IPS  ...       Crystal City
+414                                     IPS  ...           Ballston
+425                                     IPS  ...          Clarendon
+
+[50 rows x 24 columns]
+[2022-12-27 21:52:46,333] {logging_mixin.py:115} INFO - after drop:
+[2022-12-27 21:52:46,351] {logging_mixin.py:115} INFO -                       transactionSourceCode  ...      metroAreaName
+parkingTransactionKey                        ...                   
+3                                       IPS  ...    Virginia Square
+18                                      IPS  ...            Rosslyn
+28                                      IPS  ...         Courthouse
+49                                      IPS  ...            Rosslyn
+61                                      IPS  ...            Rosslyn
+7                                       IPS  ...          Clarendon
+12                                      IPS  ...        Shirlington
+37                                      IPS  ...         Courthouse
+46                                      IPS  ...         Courthouse
+55                                      IPS  ...         Courthouse
+81                                      IPS  ...         Courthouse
+95                                      IPS  ...          Clarendon
+124                                     IPS  ...  Virginia Hospital
+137                                     IPS  ...         Courthouse
+153                                     IPS  ...           Ballston
+161                                     IPS  ...      Pentagon City
+178                                     IPS  ...       Crystal City
+191                                     IPS  ...      Columbia Pike
+206                                     IPS  ...         Courthouse
+60                                      IPS  ...         Courthouse
+73                                      IPS  ...         Courthouse
+91                                      IPS  ...          Clarendon
+112                                     IPS  ...            Rosslyn
+130                                     IPS  ...  Virginia Hospital
+228                                     IPS  ...        Shirlington
+240                                     IPS  ...        Shirlington
+249                                     IPS  ...       Crystal City
+271                                     IPS  ...       Crystal City
+132                                     IPS  ...  Virginia Hospital
+141                                     IPS  ...         Courthouse
+170                                     IPS  ...         Courthouse
+195                                     IPS  ...               None
+225                                     IPS  ...          Clarendon
+230                                     IPS  ...       Crystal City
+259                                     IPS  ...       CRYSTAL CITY
+266                                     IPS  ...         Courthouse
+281                                     IPS  ...      Columbia Pike
+291                                     IPS  ...      Pentagon City
+295                                     IPS  ...       Crystal City
+310                                     IPS  ...      Pentagon City
+317                                     IPS  ...      Columbia Pike
+329                                     IPS  ...          Clarendon
+353                                     IPS  ...           Ballston
+362                                     IPS  ...       Crystal City
+373                                     IPS  ...          Clarendon
+382                                     IPS  ...         Courthouse
+389                                     IPS  ...           Ballston
+407                                     IPS  ...       Crystal City
+414                                     IPS  ...           Ballston
+425                                     IPS  ...          Clarendon
+
+[50 rows x 24 columns]
+[2022-12-27 21:52:46,355] {python.py:173} INFO - Done. Returned value was: None
+[2022-12-27 21:52:46,370] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=parking_pipeline, task_id=transform_data, execution_date=20221227T215241, start_date=20221227T215246, end_date=20221227T215246
+[2022-12-27 21:52:46,413] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-12-27 21:52:46,444] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

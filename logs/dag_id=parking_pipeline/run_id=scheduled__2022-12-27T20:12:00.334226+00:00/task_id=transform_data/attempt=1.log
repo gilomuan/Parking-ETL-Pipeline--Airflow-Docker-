@@ -1,0 +1,40 @@
+[2022-12-27 20:14:04,710] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-27T20:12:00.334226+00:00 [queued]>
+[2022-12-27 20:14:04,716] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-27T20:12:00.334226+00:00 [queued]>
+[2022-12-27 20:14:04,717] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-27 20:14:04,718] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-12-27 20:14:04,719] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-27 20:14:04,729] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): transform_data> on 2022-12-27 20:12:00.334226+00:00
+[2022-12-27 20:14:04,734] {standard_task_runner.py:52} INFO - Started process 5422 to run task
+[2022-12-27 20:14:04,739] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'parking_pipeline', 'transform_data', 'scheduled__2022-12-27T20:12:00.334226+00:00', '--job-id', '163', '--raw', '--subdir', 'DAGS_FOLDER/parking_dag.py', '--cfg-path', '/tmp/tmp1vdnns2e', '--error-file', '/tmp/tmpymiejv76']
+[2022-12-27 20:14:04,741] {standard_task_runner.py:80} INFO - Job 163: Subtask transform_data
+[2022-12-27 20:14:04,796] {task_command.py:369} INFO - Running <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-27T20:12:00.334226+00:00 [running]> on host 8fbeee8d3d5a
+[2022-12-27 20:14:04,859] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=parking_pipeline
+AIRFLOW_CTX_TASK_ID=transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-27T20:12:00.334226+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-27T20:12:00.334226+00:00
+[2022-12-27 20:14:04,885] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/parking_dag.py", line 45, in _transform_parking_data
+    df.to_csv(csv_path, index=False, mode=df_mode, header=df_header)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/generic.py", line 3482, in to_csv
+    storage_options=storage_options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/formats/format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/formats/csvs.py", line 243, in save
+    storage_options=self.storage_options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/gabeilomuanya/Desktop/GABE/PROJECTS/Parking_Pipeline_Airflow_Docker/data/processedparking_data.csv'
+[2022-12-27 20:14:04,898] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=parking_pipeline, task_id=transform_data, execution_date=20221227T201200, start_date=20221227T201404, end_date=20221227T201404
+[2022-12-27 20:14:04,907] {standard_task_runner.py:97} ERROR - Failed to execute job 163 for task transform_data ([Errno 2] No such file or directory: '/Users/gabeilomuanya/Desktop/GABE/PROJECTS/Parking_Pipeline_Airflow_Docker/data/processedparking_data.csv'; 5422)
+[2022-12-27 20:14:04,952] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-12-27 20:14:04,981] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

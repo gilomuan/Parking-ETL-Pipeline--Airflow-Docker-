@@ -1,0 +1,32 @@
+[2022-12-27 21:03:15,620] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-27T20:56:09.388360+00:00 [queued]>
+[2022-12-27 21:03:15,628] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-27T20:56:09.388360+00:00 [queued]>
+[2022-12-27 21:03:15,629] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-27 21:03:15,630] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-12-27 21:03:15,630] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-27 21:03:15,642] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): transform_data> on 2022-12-27 20:56:09.388360+00:00
+[2022-12-27 21:03:15,651] {standard_task_runner.py:52} INFO - Started process 8501 to run task
+[2022-12-27 21:03:15,656] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'parking_pipeline', 'transform_data', 'scheduled__2022-12-27T20:56:09.388360+00:00', '--job-id', '386', '--raw', '--subdir', 'DAGS_FOLDER/parking_dag.py', '--cfg-path', '/tmp/tmpa7tyzipz', '--error-file', '/tmp/tmp032uzfzc']
+[2022-12-27 21:03:15,657] {standard_task_runner.py:80} INFO - Job 386: Subtask transform_data
+[2022-12-27 21:03:15,727] {task_command.py:369} INFO - Running <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-27T20:56:09.388360+00:00 [running]> on host 8fbeee8d3d5a
+[2022-12-27 21:03:15,799] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=parking_pipeline
+AIRFLOW_CTX_TASK_ID=transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-27T20:56:09.388360+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-27T20:56:09.388360+00:00
+[2022-12-27 21:03:15,813] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/parking_dag.py", line 37, in _transform_parking_data
+    df = pd.json_normalize(data['parkingTransactionKey'])
+TypeError: string indices must be integers
+[2022-12-27 21:03:15,824] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=parking_pipeline, task_id=transform_data, execution_date=20221227T205609, start_date=20221227T210315, end_date=20221227T210315
+[2022-12-27 21:03:15,832] {standard_task_runner.py:97} ERROR - Failed to execute job 386 for task transform_data (string indices must be integers; 8501)
+[2022-12-27 21:03:15,870] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-12-27 21:03:15,902] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

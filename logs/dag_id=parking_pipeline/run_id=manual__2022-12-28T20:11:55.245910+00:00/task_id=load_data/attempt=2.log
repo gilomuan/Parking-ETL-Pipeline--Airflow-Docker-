@@ -1,0 +1,25 @@
+[2022-12-28 20:17:03,062] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.load_data manual__2022-12-28T20:11:55.245910+00:00 [queued]>
+[2022-12-28 20:17:03,069] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.load_data manual__2022-12-28T20:11:55.245910+00:00 [queued]>
+[2022-12-28 20:17:03,070] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-28 20:17:03,070] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-12-28 20:17:03,071] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-28 20:17:03,080] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): load_data> on 2022-12-28 20:11:55.245910+00:00
+[2022-12-28 20:17:03,084] {standard_task_runner.py:52} INFO - Started process 844 to run task
+[2022-12-28 20:17:03,088] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'parking_pipeline', 'load_data', 'manual__2022-12-28T20:11:55.245910+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/parking_dag.py', '--cfg-path', '/tmp/tmpkff5w259', '--error-file', '/tmp/tmpq02hkfmn']
+[2022-12-28 20:17:03,090] {standard_task_runner.py:80} INFO - Job 51: Subtask load_data
+[2022-12-28 20:17:03,145] {task_command.py:369} INFO - Running <TaskInstance: parking_pipeline.load_data manual__2022-12-28T20:11:55.245910+00:00 [running]> on host 8be693a2d03b
+[2022-12-28 20:17:03,208] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=parking_pipeline
+AIRFLOW_CTX_TASK_ID=load_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-28T20:11:55.245910+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-12-28T20:11:55.245910+00:00
+[2022-12-28 20:17:03,219] {postgres.py:127} INFO - Running copy expert: COPY parking_data FROM stdin WITH DELIMITER as ',', filename: ./tmp/processed_parking_data_00.csv
+[2022-12-28 20:17:03,229] {base.py:68} INFO - Using connection ID 'postgres' for task execution.
+[2022-12-28 20:17:03,238] {python.py:173} INFO - Done. Returned value was: None
+[2022-12-28 20:17:03,251] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=parking_pipeline, task_id=load_data, execution_date=20221228T201155, start_date=20221228T201703, end_date=20221228T201703
+[2022-12-28 20:17:03,302] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-12-28 20:17:03,333] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

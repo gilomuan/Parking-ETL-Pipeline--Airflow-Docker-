@@ -1,0 +1,141 @@
+[2022-12-27 21:57:03,334] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-27T21:54:59.379113+00:00 [queued]>
+[2022-12-27 21:57:03,340] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-27T21:54:59.379113+00:00 [queued]>
+[2022-12-27 21:57:03,341] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-27 21:57:03,341] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-12-27 21:57:03,342] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-27 21:57:03,351] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): transform_data> on 2022-12-27 21:54:59.379113+00:00
+[2022-12-27 21:57:03,355] {standard_task_runner.py:52} INFO - Started process 10934 to run task
+[2022-12-27 21:57:03,360] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'parking_pipeline', 'transform_data', 'scheduled__2022-12-27T21:54:59.379113+00:00', '--job-id', '617', '--raw', '--subdir', 'DAGS_FOLDER/parking_dag.py', '--cfg-path', '/tmp/tmpwug5rjy1', '--error-file', '/tmp/tmp5frhz98i']
+[2022-12-27 21:57:03,361] {standard_task_runner.py:80} INFO - Job 617: Subtask transform_data
+[2022-12-27 21:57:03,418] {task_command.py:369} INFO - Running <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-27T21:54:59.379113+00:00 [running]> on host 8fbeee8d3d5a
+[2022-12-27 21:57:03,489] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=parking_pipeline
+AIRFLOW_CTX_TASK_ID=transform_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-27T21:54:59.379113+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-27T21:54:59.379113+00:00
+[2022-12-27 21:57:03,510] {logging_mixin.py:115} INFO - before drop:
+[2022-12-27 21:57:03,531] {logging_mixin.py:115} INFO -                       transactionSourceCode  ...      metroAreaName
+parkingTransactionKey                        ...                   
+3                                       IPS  ...    Virginia Square
+18                                      IPS  ...            Rosslyn
+28                                      IPS  ...         Courthouse
+49                                      IPS  ...            Rosslyn
+61                                      IPS  ...            Rosslyn
+7                                       IPS  ...          Clarendon
+12                                      IPS  ...        Shirlington
+37                                      IPS  ...         Courthouse
+46                                      IPS  ...         Courthouse
+55                                      IPS  ...         Courthouse
+81                                      IPS  ...         Courthouse
+95                                      IPS  ...          Clarendon
+124                                     IPS  ...  Virginia Hospital
+137                                     IPS  ...         Courthouse
+153                                     IPS  ...           Ballston
+161                                     IPS  ...      Pentagon City
+178                                     IPS  ...       Crystal City
+191                                     IPS  ...      Columbia Pike
+206                                     IPS  ...         Courthouse
+60                                      IPS  ...         Courthouse
+73                                      IPS  ...         Courthouse
+91                                      IPS  ...          Clarendon
+112                                     IPS  ...            Rosslyn
+130                                     IPS  ...  Virginia Hospital
+228                                     IPS  ...        Shirlington
+240                                     IPS  ...        Shirlington
+249                                     IPS  ...       Crystal City
+271                                     IPS  ...       Crystal City
+132                                     IPS  ...  Virginia Hospital
+141                                     IPS  ...         Courthouse
+170                                     IPS  ...         Courthouse
+195                                     IPS  ...               None
+225                                     IPS  ...          Clarendon
+230                                     IPS  ...       Crystal City
+259                                     IPS  ...       CRYSTAL CITY
+266                                     IPS  ...         Courthouse
+281                                     IPS  ...      Columbia Pike
+291                                     IPS  ...      Pentagon City
+295                                     IPS  ...       Crystal City
+310                                     IPS  ...      Pentagon City
+317                                     IPS  ...      Columbia Pike
+329                                     IPS  ...          Clarendon
+353                                     IPS  ...           Ballston
+362                                     IPS  ...       Crystal City
+373                                     IPS  ...          Clarendon
+382                                     IPS  ...         Courthouse
+389                                     IPS  ...           Ballston
+407                                     IPS  ...       Crystal City
+414                                     IPS  ...           Ballston
+425                                     IPS  ...          Clarendon
+
+[50 rows x 24 columns]
+[2022-12-27 21:57:03,532] {logging_mixin.py:115} INFO - Index(['transactionSourceCode', 'meterId', 'zoneNbr', 'startDtm', 'endDtm',
+       'transactionAmt', 'paymentTypeName', 'transactionStatusCode',
+       'meterManufacturerName', 'blockNbr', 'sourceStreetDisplayName',
+       'sideDirectionName', 'latitudeCrd', 'longitudeCrd', 'statePlaneXCrd',
+       'statePlaneYCrd', 'handicapInd', 'timeRestrictionDsc', 'maxHoursCnt',
+       'meterTypeDsc', 'dollarPerHourRate', 'activeStatusInd', 'zoneSpaceCnt',
+       'metroAreaName'],
+      dtype='object')
+[2022-12-27 21:57:03,542] {logging_mixin.py:115} INFO - after drop:
+[2022-12-27 21:57:03,557] {logging_mixin.py:115} INFO -                                      meterId  ...      metroAreaName
+parkingTransactionKey                         ...                   
+3                                    9H3801N  ...    Virginia Square
+18                                  CBH1701N  ...            Rosslyn
+28                                  ULH1412N  ...         Courthouse
+49                                   191106N  ...            Rosslyn
+61                                   Wi1001n  ...            Rosslyn
+7                                   WIH3101N  ...          Clarendon
+12                                  QUH2717S  ...        Shirlington
+37                                   UL1404N  ...         Courthouse
+46                                  CHH1405N  ...         Courthouse
+55                                   UL1402N  ...         Courthouse
+81                                   UL1404N  ...         Courthouse
+95                                  WIH3101N  ...          Clarendon
+124                                 GMH1623N  ...  Virginia Hospital
+137                                    H315N  ...         Courthouse
+153                                  9H4000N  ...           Ballston
+161                                  JO1321S  ...      Pentagon City
+178                                   23504S  ...       Crystal City
+191                                  ADH901S  ...      Columbia Pike
+206                                  CB2400N  ...         Courthouse
+60                                      316N  ...         Courthouse
+73                                  ULH1412N  ...         Courthouse
+91                                  WIH3101N  ...          Clarendon
+112                                  191108N  ...            Rosslyn
+130                                 GMH1621N  ...  Virginia Hospital
+228                                 CAH4102S  ...        Shirlington
+240                                 RAH2700S  ...        Shirlington
+249                                  CR2108S  ...       Crystal City
+271                                   23504S  ...       Crystal City
+132                                 GMH1621N  ...  Virginia Hospital
+141                                     317N  ...         Courthouse
+170                                  CB2504N  ...         Courthouse
+195                    Spares (Arlington VA)  ...               None
+225                                  HI1103N  ...          Clarendon
+230                                 CLA2603S  ...       Crystal City
+259                                 CRH1700S  ...       CRYSTAL CITY
+266                                  CB2406N  ...         Courthouse
+281                                   AD905S  ...      Columbia Pike
+291                                 ELH1203S  ...      Pentagon City
+295                                CLAH2310S  ...       Crystal City
+310                                  JO1323S  ...      Pentagon City
+317                                   AD905S  ...      Columbia Pike
+329                                 GAH1200N  ...          Clarendon
+353                                   SU800N  ...           Ballston
+362                                  23H704S  ...       Crystal City
+373                                   Ga903N  ...          Clarendon
+382                                  CB2402N  ...         Courthouse
+389                                    H149N  ...           Ballston
+407                                 CLA2601S  ...       Crystal City
+414                                  9H4114N  ...           Ballston
+425                                  HI1103N  ...          Clarendon
+
+[50 rows x 23 columns]
+[2022-12-27 21:57:03,562] {python.py:173} INFO - Done. Returned value was: None
+[2022-12-27 21:57:03,575] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=parking_pipeline, task_id=transform_data, execution_date=20221227T215459, start_date=20221227T215703, end_date=20221227T215703
+[2022-12-27 21:57:03,612] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-12-27 21:57:03,643] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

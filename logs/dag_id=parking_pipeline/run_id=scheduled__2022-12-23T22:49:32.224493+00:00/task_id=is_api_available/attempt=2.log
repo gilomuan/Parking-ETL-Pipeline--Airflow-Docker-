@@ -1,0 +1,42 @@
+[2022-12-23 22:56:34,433] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.is_api_available scheduled__2022-12-23T22:49:32.224493+00:00 [queued]>
+[2022-12-23 22:56:34,439] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: parking_pipeline.is_api_available scheduled__2022-12-23T22:49:32.224493+00:00 [queued]>
+[2022-12-23 22:56:34,440] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-23 22:56:34,440] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-12-23 22:56:34,441] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-23 22:56:34,452] {taskinstance.py:1377} INFO - Executing <Task(HttpSensor): is_api_available> on 2022-12-23 22:49:32.224493+00:00
+[2022-12-23 22:56:34,456] {standard_task_runner.py:52} INFO - Started process 6038 to run task
+[2022-12-23 22:56:34,460] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'parking_pipeline', 'is_api_available', 'scheduled__2022-12-23T22:49:32.224493+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/parking_dag.py', '--cfg-path', '/tmp/tmpfps4y9lg', '--error-file', '/tmp/tmp05b8v625']
+[2022-12-23 22:56:34,462] {standard_task_runner.py:80} INFO - Job 10: Subtask is_api_available
+[2022-12-23 22:56:34,525] {task_command.py:369} INFO - Running <TaskInstance: parking_pipeline.is_api_available scheduled__2022-12-23T22:49:32.224493+00:00 [running]> on host 7b9b4435e086
+[2022-12-23 22:56:34,588] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=parking_pipeline
+AIRFLOW_CTX_TASK_ID=is_api_available
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-23T22:49:32.224493+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-23T22:49:32.224493+00:00
+[2022-12-23 22:56:34,590] {http.py:97} INFO - Poking: 
+[2022-12-23 22:56:34,616] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/sensors/base.py", line 277, in execute
+    poke_return = self.poke(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/sensors/http.py", line 112, in poke
+    raise exc
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/sensors/http.py", line 103, in poke
+    extra_options=self.extra_options,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 114, in run
+    session = self.get_conn(headers)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 68, in get_conn
+    conn = self.get_connection(self.http_conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 67, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 430, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `is_api_available` isn't defined
+[2022-12-23 22:56:34,620] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=parking_pipeline, task_id=is_api_available, execution_date=20221223T224932, start_date=20221223T225634, end_date=20221223T225634
+[2022-12-23 22:56:34,630] {standard_task_runner.py:97} ERROR - Failed to execute job 10 for task is_api_available (The conn_id `is_api_available` isn't defined; 6038)
+[2022-12-23 22:56:34,675] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-12-23 22:56:34,705] {dagrun.py:648} WARNING - Failed to get task '<TaskInstance: parking_pipeline.transform_data scheduled__2022-12-23T22:49:32.224493+00:00 [removed]>' for dag 'parking_pipeline'. Marking it as removed.
+[2022-12-23 22:56:34,717] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

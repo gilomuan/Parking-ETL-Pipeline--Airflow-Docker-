@@ -1,0 +1,2 @@
+[2022-12-26 19:29:39,724] {taskinstance.py:1153} INFO - Dependencies not met for <TaskInstance: parking_pipeline.transform_data scheduled__2022-12-26T19:27:38.689170+00:00 [queued]>, dependency 'Trigger Rule' FAILED: Task's trigger rule 'all_success' requires all upstream tasks to have succeeded, but found 1 non-success(es). upstream_tasks_state={'total': 1, 'successes': 0, 'skipped': 0, 'failed': 0, 'upstream_failed': 0, 'done': 0}, upstream_task_ids={'extract_user'}
+[2022-12-26 19:29:39,726] {local_task_job.py:101} INFO - Task is not able to be run

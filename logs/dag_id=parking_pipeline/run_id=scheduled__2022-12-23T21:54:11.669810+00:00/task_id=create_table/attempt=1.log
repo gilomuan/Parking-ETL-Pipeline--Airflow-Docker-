@@ -1,0 +1,38 @@
+[2022-12-23T21:56:14.206+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: parking_pipeline.create_table scheduled__2022-12-23T21:54:11.669810+00:00 [queued]>
+[2022-12-23T21:56:14.216+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: parking_pipeline.create_table scheduled__2022-12-23T21:54:11.669810+00:00 [queued]>
+[2022-12-23T21:56:14.216+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-23T21:56:14.217+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 2
+[2022-12-23T21:56:14.218+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-23T21:56:14.228+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_table> on 2022-12-23 21:54:11.669810+00:00
+[2022-12-23T21:56:14.234+0000] {standard_task_runner.py:55} INFO - Started process 12794 to run task
+[2022-12-23T21:56:14.239+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'parking_pipeline', 'create_table', 'scheduled__2022-12-23T21:54:11.669810+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/parking_dag.py', '--cfg-path', '/tmp/tmp1bwze7jl']
+[2022-12-23T21:56:14.241+0000] {standard_task_runner.py:83} INFO - Job 63: Subtask create_table
+[2022-12-23T21:56:14.516+0000] {task_command.py:389} INFO - Running <TaskInstance: parking_pipeline.create_table scheduled__2022-12-23T21:54:11.669810+00:00 [running]> on host 0330eddd684a
+[2022-12-23T21:56:14.619+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=parking_pipeline
+AIRFLOW_CTX_TASK_ID=create_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-23T21:54:11.669810+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-12-23T21:54:11.669810+00:00
+[2022-12-23T21:56:14.621+0000] {sql.py:253} INFO - Executing: 
+            drop table if exists parking_data;
+            create table parking_data(
+                rate float not null,
+                symbol text not null
+            );
+        
+[2022-12-23T21:56:14.639+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2022-12-23T21:56:14.816+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2022-12-23T21:56:14.824+0000] {sql.py:364} INFO - Running statement: 
+            drop table if exists parking_data;
+            create table parking_data(
+                rate float not null,
+                symbol text not null
+            );
+        , parameters: None
+[2022-12-23T21:56:14.845+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=parking_pipeline, task_id=create_table, execution_date=20221223T215411, start_date=20221223T215614, end_date=20221223T215614
+[2022-12-23T21:56:14.898+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2022-12-23T21:56:14.921+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
